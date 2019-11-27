@@ -1,11 +1,11 @@
 import pymysql
 from db_configuration import mysql
 
-
 def exist(new_student_ID):
 	select_id = select_ids()
 	for id in select_id:
-		if(new_student_ID == id):
+		#Convert string to list and dict to list
+		if([int(new_student_ID)] == [*id.values()]):
 			return True
 	return False
 
@@ -17,7 +17,7 @@ def point_to_mysql():
 def select_ids():
 	try:
 		mysql_connector, cursor = point_to_mysql()
-		cursor.execute("SELECT Student_ID FROM studentsdatabase")
+		cursor.execute("SELECT Student_ID FROM ")
 		columns = cursor.fetchall()
 		return columns
 	except Exception as error:
