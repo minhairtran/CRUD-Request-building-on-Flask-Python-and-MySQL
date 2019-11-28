@@ -2,4 +2,5 @@
 
 <h1>Set up<h1>
 cd .../user_crud
-cd python MethodsController.py
+cd python MethodsControll.py
+EVENT -> Controller -> View -> Model
